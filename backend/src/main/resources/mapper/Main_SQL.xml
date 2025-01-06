@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.intro.moani.mapper.MainMapper">
+    <select id="getMenuList" parameterType="map" resultType="map">
+        SELECT
+            MENU_ID as "menuId",
+            MENU_NM as "menuNm"
+        FROM
+            MS_MENU
+    </select>
+</mapper>
