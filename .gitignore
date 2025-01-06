@@ -1,0 +1,11 @@
+# Node.js
+frontend/node_modules/
+
+# Java
+backend/target/
+*.class
+*.jar
+*.war
+
+# General
+.DS_Store
