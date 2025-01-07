@@ -1,2 +1,3 @@
-# moani
- 모아니스테이 풀스택 프로젝트
+# MOA-NI (MOA-New-Itineray)
+
+세상 모든 이동을 모아
