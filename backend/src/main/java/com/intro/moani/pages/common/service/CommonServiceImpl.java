@@ -1,6 +1,6 @@
-package com.intro.moani.pages.main.service;
+package com.intro.moani.pages.common.service;
 
-import com.intro.moani.mapper.MainMapper;
+import com.intro.moani.mapper.CommonMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class MainServiceImpl implements MainService {
+public class CommonServiceImpl implements CommonService {
 
     @Autowired
-    private MainMapper mainMapper;
+    private CommonMapper commonMapper;
 
     @Override
     public List<Map<String, Object>> getMenuList(Map<String, Object> requestMap) {
-        List<Map<String, Object>> list = mainMapper.getMenuList(requestMap);
+        List<Map<String, Object>> list = commonMapper.getMenuList(requestMap);
 
         return list;
     }

@@ -1,8 +1,9 @@
-package com.intro.moani.pages.main;
+package com.intro.moani.pages.common;
 
-import com.intro.moani.pages.main.service.MainService;
+import com.intro.moani.pages.common.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,13 +13,13 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-public class MainController {
+public class CommonController {
 
     @Autowired
-    private MainService mainService;
+    private CommonService commonService;
 
-    @GetMapping("/menuList")
+    @PostMapping("/menuList")
     public List<Map<String, Object>> getMenuList(Map<String, Object> requestMap) throws SQLException, Exception {
-        return mainService.getMenuList(requestMap);
+        return commonService.getMenuList(requestMap);
     }
 }

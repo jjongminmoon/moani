@@ -6,8 +6,9 @@
 }
 
 body {
-  min-width: 1280px;
-  margin: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #eee;
   font-family: "Happiness-Sans-Bold";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
