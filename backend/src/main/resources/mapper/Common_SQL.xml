@@ -9,6 +9,9 @@
             PATH as "path"
         FROM
             MS_MENU
-        WHERE DEPTH = #{depth} and PID = #{pid}
+        WHERE DEPTH = #{depth}
+        <if test="pid != null">
+            AND PID = #{pid}
+        </if>
     </select>
 </mapper>

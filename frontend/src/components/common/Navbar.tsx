@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useApi } from "../../utils/api";
 import SectionUI from "../ui/Section";
-import axios from "axios";
-import { useAxios } from "../../utils/api";
 
 export default function Navbar() {
-  const { menuList, loading, error } = useAxios("/api/menuList", { depth: 1 }, "post");
+  const { data, loading, error } = useApi("/common/menuList", "post", {
+    depth: 1,
+  });
 
-  return <SectionUI></SectionUI>;
+  if (loading) return <div>Loading...</div>;
+  if (error) alert("에러");
+
+  console.log(data);
+
+  return <SectionUI>메뉴</SectionUI>;
 }

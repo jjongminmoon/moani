@@ -1,36 +1,37 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
-type HttpMethod = "get" | "post";
+const axiosInstance = axios.create({
+  baseURL: "/api",
+});
 
-interface Params {
-  url: string;
-  params: string;
-  method: HttpMethod;
-  config?: AxiosRequestConfig;
-}
-
-export const useAxios = ({ url, params, method, config }: Params) => {
-  const [data, setData] = useState<null>(null);
-  const [error, setError] = useState<Error | null>(null);
+export const useApi = (url: string, method: "get" | "post", params?: any) => {
+  const [data, setData] = useState<any>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<any>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         if (method === "get") {
-          await axios.get(url, config).then((res) => setData(res.data));
+          const response = await axiosInstance.get(url);
+          setData(response);
         } else if (method === "post") {
-          await axios.post(url, params, config).then((res) => setData(res.data));
+          const response = await axiosInstance.post(url, params);
+          setData(response);
         } else {
-          throw new Error("Unsupported HTTP method");
+          throw new Error(`Invalid Method: ${method}`);
         }
       } catch (err) {
-        setError(err as Error);
+        setError(err);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, [url, method, params, config]);
+  }, [url, method, params]);
 
-  return { data, error };
+  return { data, loading, error };
 };

@@ -1,10 +1,13 @@
 import "./App.css";
+import Navbar from "./components/common/Navbar";
 import SectionUI from "./components/ui/Section";
 
 function App() {
   return (
     <>
-      <SectionUI>백엔드 데이터</SectionUI>
+      <SectionUI>
+        <Navbar />
+      </SectionUI>
     </>
   );
 }
