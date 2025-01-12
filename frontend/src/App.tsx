@@ -1,14 +1,20 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./App.css";
 import Navbar from "./components/common/Navbar";
-import SectionUI from "./components/ui/Section";
+import PageNavigator from "./components/PageNavigator";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
-      <SectionUI>
+    <QueryClientProvider client={queryClient}>
+      <div>
         <Navbar />
-      </SectionUI>
-    </>
+        <main>
+          <PageNavigator />
+        </main>
+      </div>
+    </QueryClientProvider>
   );
 }
 

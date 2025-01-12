@@ -5,5 +5,5 @@ export default function SectionUI({ children }: { children: React.ReactNode }) {
 }
 
 const Section = styled.section`
-  background-color: green;
+  background-color: #fff;
 `;

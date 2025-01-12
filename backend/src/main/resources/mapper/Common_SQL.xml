@@ -13,5 +13,6 @@
         <if test="pid != null">
             AND PID = #{pid}
         </if>
+        ORDER BY "menuId"
     </select>
 </mapper>

@@ -1,3 +1,5 @@
+import SectionUI from "../components/ui/Section";
+
 export default function Home() {
-  return <div>Home</div>;
+  return <SectionUI></SectionUI>;
 }
