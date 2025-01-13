@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import SectionUI from "../ui/Section";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/common/logo.webp";
 import { Post } from "../../utils/api";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
@@ -23,29 +22,34 @@ export default function Navbar() {
   console.log(data);
 
   return (
-    <SectionUI>
-      <Container>
-        <MenuList>
-          {data?.slice(0, 3).map((item) => (
-            <Link to={item.path} key={item.menuId}>
-              {item.menuNm}
-            </Link>
-          ))}
-          <Link to="/">
-            <Logo src={logo} alt="모아니 로고" />
+    <Container>
+      <MenuList>
+        {data?.slice(0, 3).map((item) => (
+          <Link to={item.path} key={item.menuId}>
+            {item.menuNm}
           </Link>
-          {data?.slice(3, 6).map((item) => (
-            <Link to={item.path} key={item.menuId}>
-              {item.menuNm}
-            </Link>
-          ))}
-        </MenuList>
-      </Container>
-    </SectionUI>
+        ))}
+        <Link to="/">
+          <Logo src={logo} alt="모아니 로고" />
+        </Link>
+        {data?.slice(3, 6).map((item) => (
+          <Link to={item.path} key={item.menuId}>
+            {item.menuNm}
+          </Link>
+        ))}
+      </MenuList>
+    </Container>
   );
 }
 
 const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
   background-color: #fff;
 `;
 

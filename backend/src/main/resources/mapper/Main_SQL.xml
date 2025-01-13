@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.intro.moani.mapper.MainMapper">
+    <select id="getMainImage" parameterType="map" resultType="map">
+        SELECT
+            IMG_ID as "imgId",
+            FILE_NM as "fileNm",
+            FILE_PATH as "filePath",
+            FILE_EXTSN as "fileExtsn",
+            PRIORITY as "priority"
+        FROM
+            MS_MAIN_IMG
+        ORDER BY PRIORITY
+    </select>
+</mapper>
