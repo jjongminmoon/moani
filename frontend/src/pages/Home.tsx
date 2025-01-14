@@ -2,14 +2,15 @@ import styled from "@emotion/styled";
 import SectionUI from "../components/ui/SectionUI";
 import { useQuery } from "@tanstack/react-query";
 import { Get } from "../utils/api";
+import CarouselUI from "../components/ui/CarouselUI";
 
-interface Image {
+export type Image = {
   imgId: number;
   fileNm: string;
   fileExtsn: string;
   filePath: string;
   priority: number;
-}
+};
 
 export default function Home() {
   const { data, isLoading } = useQuery<Image[]>({
@@ -23,14 +24,7 @@ export default function Home() {
 
   return (
     <SectionUI>
-      {data?.map((item) => (
-        <Image src={item.filePath} key={item.imgId} />
-      ))}
+      <CarouselUI images={data} />
     </SectionUI>
   );
 }
-
-const Image = styled.img`
-  width: 100%;
-  height: 800px;
-`;
