@@ -58,7 +58,7 @@ const MenuList = styled.ul`
   gap: 100px;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 120px;
   color: #000;
 `;
 
