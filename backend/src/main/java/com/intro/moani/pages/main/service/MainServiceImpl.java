@@ -3,6 +3,7 @@ package com.intro.moani.pages.main.service;
 import com.intro.moani.mapper.MainMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -15,8 +16,8 @@ public class MainServiceImpl implements MainService {
     private MainMapper mainMapper;
 
     @Override
-    public List<Map<String, Object>> getMainImage() throws SQLException, Exception {
-        List<Map<String, Object>> list = mainMapper.getMainImage();
+    public List<Map<String, Object>> getMainImage(@RequestBody Map<String, Object> requestMap) throws SQLException, Exception {
+        List<Map<String, Object>> list = mainMapper.getMainImage(requestMap);
 
         return list;
     }

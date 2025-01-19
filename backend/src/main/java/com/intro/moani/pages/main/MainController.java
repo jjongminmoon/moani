@@ -15,8 +15,8 @@ public class MainController {
     @Autowired
     private MainService mainService;
 
-    @GetMapping("/mainImage")
-    public List<Map<String, Object>> getMainImage() throws SQLException, Exception {
-        return mainService.getMainImage();
+    @PostMapping("/mainImage")
+    public List<Map<String, Object>> getMainImage(@RequestBody Map<String, Object> requestMap) throws SQLException, Exception {
+        return mainService.getMainImage(requestMap);
     }
 }

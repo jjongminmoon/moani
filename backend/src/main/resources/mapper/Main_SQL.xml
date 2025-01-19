@@ -8,9 +8,10 @@
             FILE_NM as "fileNm",
             FILE_PATH as "filePath",
             FILE_EXTSN as "fileExtsn",
-            PRIORITY as "priority"
+            PRIORITY as "prior"
         FROM
             MS_MAIN_IMG
+        WHERE IMG_TYPE = #{imgType}
         ORDER BY PRIORITY
     </select>
 </mapper>

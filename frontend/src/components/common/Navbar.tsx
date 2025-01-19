@@ -44,27 +44,30 @@ export default function Navbar() {
 
 const Container = styled.div`
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
-  max-width: 1280px;
   width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #000;
+  border-radius: 20px;
+  z-index: 99;
 `;
 
 const MenuList = styled.ul`
   display: flex;
-  gap: 100px;
+  gap: 80px;
   justify-content: center;
   align-items: center;
-  height: 120px;
-  color: #000;
+  height: 80px;
+  margin-top: 5px;
+  color: #fff;
 `;
 
 const Logo = styled.img`
-  width: 80px;
-  heigth: 80px;
+  width: 65px;
+  heigth: 60px;
   border-radius: 100%;
   object-fit: cover;
 `;

@@ -5,6 +5,7 @@ export default function SectionUI({ children }: { children: React.ReactNode }) {
 }
 
 const Section = styled.section`
+  max-width: 1280px;
+  margin: 100px auto 0 auto;
   background-color: #fff;
-  overflow-x: hidden;
 `;

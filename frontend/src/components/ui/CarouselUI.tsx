@@ -2,7 +2,15 @@ import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { MdOutlineArrowBackIos } from "react-icons/md";
-import { Image } from "../../pages/Home";
+
+type Image = {
+  imgId: number;
+  fileNm: string;
+  fileExtsn: string;
+  filePath: string;
+  prior: number;
+  imgType: number;
+};
 
 interface CaruoselProps {
   images?: Image[];

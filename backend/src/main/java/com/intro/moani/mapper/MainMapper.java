@@ -1,6 +1,7 @@
 package com.intro.moani.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -9,5 +10,5 @@ import java.util.Map;
 @Mapper
 public interface MainMapper {
 
-    List<Map<String, Object>> getMainImage() throws SQLException, Exception;
+    List<Map<String, Object>> getMainImage(@RequestBody Map<String, Object> requestMap) throws SQLException, Exception;
 }
