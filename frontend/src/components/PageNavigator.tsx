@@ -1,22 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import Room from "../pages/Room";
-import Exterior from "../pages/Exterior";
-import Info from "../pages/Info";
-import Location from "../pages/Location";
-import Travel from "../pages/Travel";
-import Review from "../pages/Review";
+import Category from "../pages/Category";
+import Style from "../pages/Style";
+import Shop from "../pages/Shop";
+import Event from "../pages/Event";
 
 export default function PageNavigator() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/room" element={<Room />} />
-      <Route path="/info" element={<Info />} />
-      <Route path="/exterior" element={<Exterior />} />
-      <Route path="/location" element={<Location />} />
-      <Route path="/travel" element={<Travel />} />
-      <Route path="/review" element={<Review />} />
+      <Route path="/search" element={<Category />} />
+      <Route path="/style" element={<Style />} />
+      <Route path="/shop" element={<Shop />} />
+      <Route path="/event" element={<Event />} />
     </Routes>
   );
 }

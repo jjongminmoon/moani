@@ -1,15 +1,14 @@
 @font-face {
-  font-family: "LINESeedKR-Bd";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
-    format("woff2");
-  font-weight: 700;
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+  font-weight: normal;
   font-style: normal;
 }
 
 body {
-  margin: 0 auto;
   background-color: #fff;
-  font-family: "LINESeedKR-Bd";
+  font-family: "SpoqaHanSansNeo-Regular";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #050505;
@@ -46,7 +45,7 @@ input:focus {
 
 button {
   cursor: pointer;
-  font-family: "Happiness-Sans-Bold";
+  font-family: "SpoqaHanSansNeo-Regular";
 }
 
 p {
@@ -55,7 +54,7 @@ p {
 
 input,
 textarea {
-  font-family: "Happiness-Sans-Bold";
+  font-family: "SpoqaHanSansNeo-Regular";
 }
 
 table,

@@ -1,8 +1,9 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./App.css";
+import styled from "@emotion/styled";
+import Header from "./components/common/Header";
 import Navbar from "./components/common/Navbar";
 import PageNavigator from "./components/PageNavigator";
-import styled from "@emotion/styled";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
@@ -10,9 +11,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div>
-        <header>
+        <HeaderContainer>
+          <Header />
           <Navbar />
-        </header>
+        </HeaderContainer>
         <MainCotainer>
           <PageNavigator />
         </MainCotainer>
@@ -22,6 +24,14 @@ function App() {
 }
 
 export default App;
+
+const HeaderContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+`;
 
 const MainCotainer = styled.main`
   height: 100vh;

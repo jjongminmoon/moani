@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.intro.moani.mapper.CommonMapper">
+<mapper namespace="com.intro.mout.mapper.CommonMapper">
     <select id="getMenuList" parameterType="map" resultType="map">
         SELECT
             MENU_ID as "menuId",
             MENU_NM as "menuNm",
-            PATH as "path"
+            MENU_PATH as "menuPath"
         FROM
-            MS_MENU
-        WHERE DEPTH = #{depth}
-        <if test="pid != null">
-            AND PID = #{pid}
-        </if>
-        ORDER BY "menuId"
+            MT_MENU
     </select>
 </mapper>
